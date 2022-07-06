@@ -1,17 +1,32 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+
+  const seenNumbers = {}
+
+  for (const number of array) {
+
+    const complement = target - number
+
+    if (seenNumbers[complement]) return true
+
+    seenNumbers[number] = true
+
+  }
+
+  return false
+
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  BIG O TIME COMPLEXITY
+  1 step = create array
+  n steps = iterate through array
+  1 step = return false
+   => 0(n) time complexity
 */
 
 /* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
+  Submitted psuedocode as part of assignment
+  Copied solution from module into index.js and ran tests to confirm accuracy
 */
 
 // You can run `node index.js` to view these console logs
